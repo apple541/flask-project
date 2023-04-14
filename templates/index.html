@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Internet</title>
-</head>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkUtpVf9BaOOVPzAZOXl8E_OCwYTp17S-WBA&usqp=CAU">
-<link rel="stylesheet" type="text/css" href="../static/style.css">
-<body>
-    <div class="cards">
-    {% for item in data %}
-        
-         <div  class= "card">
-            <img src="../static/cards/{{item.id}}.jpg">
-            <h5>Айди: {{ item.id }} </h5>
-            <h1>{{ item.wifiname}} </h1>
-            <p>{{ item.wifispeed }} скорость</p>
-            <p>{{ item.wifidelay }} скорость включения</p>
-            <p>{{ item.wifipricemonth }} цена в месяц</p>
-            <p>{{ item.wifimaxusers }} максимальное количество пользователей</p>
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+  </head>
+  <body>
+    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkUtpVf9BaOOVPzAZOXl8E_OCwYTp17S-WBA&usqp=CAU"> -->
+    <div class="head">
+      <h1>Интернет</h1>
     </div>
-    {% endfor %}
-</div>
-</body>
+    <div class="cards">
+      {% for item in data %}
+
+      <div class="card">
+        <img src="../static/cards/{{item.id}}.jpg" class="image" />
+        <h5>Айди: {{ item.id }}</h5>
+        <h1>{{ item.wifiname}}</h1>
+        <p>{{ item.wifispeed }} скорость</p>
+        <p>{{ item.wifidelay }} скорость включения</p>
+        <p>{{ item.wifipricemonth }} цена в месяц</p>
+        <p>{{ item.wifimaxusers }} максимальное количество пользователей</p>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
 </html>
