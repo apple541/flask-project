@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="add_card">
+      <form action="/add_card" method="POST">
+       <input type="text" name="wifiname" placeholder="wifiname">
+       <input type="text" name="wifiprice" placeholder="wifiprice">
+       <input type="text" name="wifispeed" placeholder="wifispeed">
+       <input type="submit" value="Готово">
+      </form>
+    </div>
+    <div class="cards">
+      {% for item in data %}
+          
+           <div  class= "card">
+            <form class="delete" action="/delete_card" method="POST">
+              <input type="submit" value="Добавить">
+              <img src="../static/close.png" class="delete">
+            </input>
+            <input type="hidden" name="id" value="{{ item.id}}">
+            </form>
+              <img src="../static/cards/{{item.id}}.jpg">
+              <h5>Айди: {{ item.id }} </h5>
+              <h1>{{ item.wifiname}} </h1>
+              <p>{{ item.wifispeed }} скорость</p>
+              <p>{{ item.wifidelay }} скорость включения</p>
+              <p>{{ item.wifipricemonth }} цена в месяц</p>
+              <p>{{ item.wifimaxusers }} максимальное количество пользователей</p>
+      </div>
+      {% endfor %}
+  </div>
+</body>
+</html>
