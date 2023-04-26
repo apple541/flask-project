@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Internet</title>
+    <title>Интернет Магазин</title>
     <link rel="stylesheet" type="text/css" href="../static/style.css" />
   </head>
   <body>
@@ -16,9 +16,9 @@
       {% for item in data %}
 
       <div class="card">
-        <img src="../static/cards/{{item.id}}.jpg" class="image" />
-        <h5>Айди: {{ item.id }}</h5>
-        <h1>{{ item.wifiname}}</h1>
+        <img src="../static/cards/{{item.id}}.jpg" class="image">
+        <h5>Айди товара: {{ item.id }} </h3>
+        <h1>{{ item.wifiname}}</h2>
         <p>{{ item.wifispeed }} скорость</p>
         <p>{{ item.wifidelay }} скорость включения</p>
         <p>{{ item.wifipricemonth }} цена в месяц</p>

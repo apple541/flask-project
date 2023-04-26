@@ -5,14 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../static/style.css">
-    <title>Document</title>
+    <title>Админ панель</title>
 </head>
 <body>
-  <!-- должно быть все кроме id и картинки -->
-  <!-- сделать красивым, и аккуратным -->
-  <!-- должно быть оцентрованно по вертикали -->
     <div class="add_card">
-      <form action="/add_card" method="POST">
+      <form action="/add_card" method="POST" class="addcard">
        <input type="text" name="wifiname" placeholder="wifiname">
        <input type="text" name="wifiprice" placeholder="wifiprice">
        <input type="text" name="wifispeed" placeholder="wifispeed">
@@ -23,16 +20,13 @@
       {% for item in data %}
           
            <div class="card">
-            <!-- сделать красивую кнопку удаления -->
             <form class="delete" action="/delete_card" method="POST">
-              <input type="submit" value="Добавить">
+              <input type="submit" value="x" class="del">
               <img src="../static/close.png" class="delete_image">
             </input>
             <input type="hidden" name="id" value="{{ item.id}}">
             </form>
-              <img src="../static/cards/{{item.id}}.jpg" class="image">
-              <h5>Айди: {{ item.id }} </h5>
-              <h1>{{ item.wifiname}} </h1>
+              <h1>{{ item.wifiname}} </h3>
               <p>{{ item.wifispeed }} скорость</p>
               <p>{{ item.wifidelay }} скорость включения</p>
               <p>{{ item.wifipricemonth }} цена в месяц</p>
