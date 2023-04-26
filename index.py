@@ -6,6 +6,7 @@ import datetime
 app = Flask(__name__)
 
 
+# след урок
 # перезаписывать файл data.py
 # добавлять в файл data.py
 
