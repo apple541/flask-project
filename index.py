@@ -10,7 +10,7 @@ def index():
     return render_template('index.html', data=data)
 
 @app.route('/add_card', methods=['POST'])
-def add_card() :
+def add_card() : 
     card = {}
     card['id'] = datetime.datetime.now()
     card['wifi'] = request.form['wifiname']
