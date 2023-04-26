@@ -5,6 +5,10 @@ import datetime
 
 app = Flask(__name__)
 
+
+# перезаписывать файл data.py
+# добавлять в файл data.py
+
 @app.route('/')
 def index():
     return render_template('index.html', data=data)

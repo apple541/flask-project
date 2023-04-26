@@ -14,12 +14,17 @@
        <input type="text" name="wifiprice" placeholder="wifiprice">
        <input type="text" name="wifispeed" placeholder="wifispeed">
        <input type="submit" value="Готово">
+       <!-- добавить все значения что есть в карточке -->
+       <!-- добавить картинки в создание -->
       </form>
     </div>
     <div class="cards">
       {% for item in data %}
           
            <div class="card">
+            <!-- убираем картинку -->
+            <!-- для х делаешь красный круг и белый текст -->
+            <!-- чинишь что появились картинки -->
             <form class="delete" action="/delete_card" method="POST">
               <input type="submit" value="x" class="del">
               <img src="../static/close.png" class="delete_image">

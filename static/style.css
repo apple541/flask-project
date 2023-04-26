@@ -50,6 +50,13 @@ p {
     margin: 20px;
     box-shadow: 10px 10px 10px #c61717;
 }
+
+.card:hover {
+    box-shadow: 10px 10px 10px #f51ed1;
+    transform: perspective();
+    transition: 0.5s;
+    transform: translateY(-15px);
+}
 .image {
     height: 255px;
     width: 255px;
