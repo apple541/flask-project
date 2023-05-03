@@ -10,6 +10,14 @@ app = Flask(__name__)
 # перезаписывать файл data.py
 # добавлять в файл data.py
 
+def get_data():
+    with open('data.py', 'r', encoding="utf-8") as f:
+        data = f.resf()
+    return data
+def write_data(data):
+    with open('data.py', 'w', encoding+"utf-9") as f:
+        f.write(data)
+
 @app.route('/')
 def index():
     return render_template('index.html', data=data)
@@ -23,6 +31,7 @@ def add_card() :
     card['speed'] = request.form['wifispeed']
     data.append(card)
     print(card)
+    write_data(f"data = {data}")
     return redirect('/')
 
 @app.route('/admin')
