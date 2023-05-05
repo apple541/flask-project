@@ -13,7 +13,11 @@
        <input type="text" name="wifiname" placeholder="wifiname">
        <input type="text" name="wifiprice" placeholder="wifiprice">
        <input type="text" name="wifispeed" placeholder="wifispeed">
+       <input type="text" name="wifipricemonth" placeholder="wifipricemonth">
        <input type="submit" value="Готово">
+       <input type="file" name="image" placeholder="image" accept=".jpg, .png">
+       <input type="submit" value="Добавить"
+
        <!-- добавить все значения что есть в карточке -->
        <!-- добавить картинки в создание -->
       </form>
@@ -38,6 +42,7 @@
               <p>{{ item.wifipricemonth }} цена в месяц</p>
               <p>{{ item.wifimaxusers }} максимальное количество пользователей</p>
       </div>
+
       {% endfor %}
   </div>
 </body>
