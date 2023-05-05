@@ -8,28 +8,22 @@
     <title>Админ панель</title>
 </head>
 <body>
-    <div class="add_card">
-      <form action="/add_card" method="POST" class="addcard">
+    <div class="add_card" >
+      <form action="/add_card" method="POST" class="addcard" enctype="multipart/form-data">
        <input type="text" name="wifiname" placeholder="wifiname">
        <input type="text" name="wifiprice" placeholder="wifiprice">
        <input type="text" name="wifispeed" placeholder="wifispeed">
        <input type="text" name="wifipricemonth" placeholder="wifipricemonth">
-       <input type="submit" value="Готово">
+       <input type="text" name="wifidelay" placeholder="wifidelay">
+       <input type="text" name="wifimaxusers" placeholder="wifimaxusers">
        <input type="file" name="image" placeholder="image" accept=".jpg, .png">
-       <input type="submit" value="Добавить"
-
-       <!-- добавить все значения что есть в карточке -->
-       <!-- добавить картинки в создание -->
+       <input type="submit" value="Добавить">
       </form>
     </div>
     <div class="cards">
       {% for item in data %}
           
            <div class="card">
-            <!-- след урок -->
-            <!-- убираем картинку -->
-            <!-- для х делаешь красный круг и белый текст -->
-            <!-- чинишь что появились картинки -->
             <form class="delete" action="/delete_card" method="POST">
               <input type="submit" value="x" class="del">
               <img src="../static/close.png" class="delete_image">

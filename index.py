@@ -3,6 +3,7 @@ from data import data
 from flask import Flask, render_template,request,redirect
 import datetime
 
+
 app = Flask(__name__)
 
 
@@ -12,6 +13,7 @@ def get_data():
     with open('data.py', 'r', encoding="utf-8") as f:
         data = f.read()
     return data
+
 def write_data(data):
     with open('data.py', 'w', encoding="utf-8") as f:
         f.write(data)
@@ -21,13 +23,16 @@ def index():
     return render_template('index.html', data=data)
 
 @app.route('/add_card', methods=['POST'])
-def add_card() : 
+def add_card(): 
     card = {}
-    card['id'] = datetime.datetime.now()
-    card['wifi'] = request.form['wifiname']
-    card['price'] = request.form['wifiprice']
-    card['speed'] = request.form['wifispeed']
+    card['id'] = str(datetime.datetime.now())[-6:-1]
+    card['wifiname'] = request.form['wifiname']
+    card['wifispeed'] = request.form['wifispeed']
+    card['wifidelay'] = request.form['wifidelay']
+    card['wifipricemonth'] = request.form['wifipricemonth']
+    card['wifimaxusers'] = request.form['wifimaxusers']
 
+    # код который распаковывает картинку
     data.append(card)
     write_data(f"data = {data}")
     return redirect('/')
